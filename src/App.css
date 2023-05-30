@@ -15,7 +15,28 @@
 .font-face-gm {
   font-family: "Hobeaux Black";
 }
-
+#pop{
+  z-index: 4;
+}
+#info{
+  z-index: 3;
+}
+.instructionCloseButton{
+  background-color: #0394C3;
+ color: #E1E1E1;
+}
+.popupInstruction{
+  background: #FFF200 !important;
+  border: 5px solid #FFFFFF !important; 
+  border-radius: 76px !important;
+}
+.instructionModalTitle{
+  color: #0A84FF;
+  font-size: 40px;
+}
+/* #popover{
+  z-index: 3;
+} */
 #zappar-placement-ui {
   position: absolute;
   bottom: 30px;
@@ -30,7 +51,6 @@
   border-radius: 5px;
   cursor: pointer;
 }
-
 .cssanimation,
 .cssanimation span {
   animation-duration: 1s;
@@ -119,6 +139,9 @@
   position: absolute;
   left: 0;
   bottom: 0;
+}
+.aligned{
+  text-align: left;
 }
 .cloudimage{
   position: absolute;
@@ -341,18 +364,23 @@ h2 {
 }
 .continents {
   background-color: #0394C3;
-  height: 131px;
+  height: 142px;
   border-radius: 10px;
   /* position: relative;
     top: -7%; */
 }
+.pdfbtn{
+  position: absolute;
+    left: -106px;
+
+}
 .badged{
   position: absolute;
   z-index: 1;
-  left: 74%;
+  left: 71%;
   background-color: red;
   border-radius: 9px;
-  top: 1%;
+  top: 5%;
   color: white;
   font-size: 15px;
 }
@@ -1119,13 +1147,7 @@ h2 {
     z-index: 2;
   }
 }
-@media (min-width:390px) {
-  .onHoverAnswer{
-    position: relative;
-    top: 25%;
-    z-index: 2;
-  }
-}
+
 @media (min-width:360px) {
   .onHoverAnswer{
     position: relative;
@@ -1146,5 +1168,23 @@ h2 {
     position: relative;
     top: 26%;
     z-index: 2;
+  }
+}
+@media (min-width:390px) {
+  .onHoverAnswer{
+    position: relative;
+    top: 25%;
+    z-index: 2;
+  }
+}
+/* passport */
+@media (min-width:414px) {
+  .badged{
+    top: 4%;
+  }
+}
+@media (min-width:390px) {
+  .badged{
+    top: 4%;
   }
 }

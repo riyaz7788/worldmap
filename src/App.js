@@ -10,10 +10,12 @@ import jsPDF from 'jspdf';
 import { Camera } from "react-camera-pro";
 import html2pdf from 'html2pdf.js';
 import TriviaQuestion from './components/TriviaQuestion';
+import ReactToPdf from 'react-to-pdf' 
 //open passport function
 
 function Passport() {
-  const pdfRef = useRef();
+  const ref= useRef();
+  // const ref = React.createRef();
   const onFlip = useCallback((e) => {
     console.log('Current page: ' + e.data);
   }, []);
@@ -30,6 +32,12 @@ function Passport() {
 }
 
 function App(props) {
+  const ref = useRef();
+const options = {
+    orientation: 'portrait',
+    unit: 'in',
+    format: [4,2]
+};
   const camera = useRef(null);
   const [image, setImage] = useState(null);
   const [display, setDisplay] = useState(true);
@@ -70,7 +78,7 @@ function App(props) {
   }
   const save = () => {
     let username = document.getElementById("playerfirstname").value
-    // alert(username)
+    // alert(username)kartik
     let usernameonpassport = document.getElementById("usernameonpassport").innerHTML = username;
     // alert(usernameonpassport)
 
@@ -95,58 +103,20 @@ function App(props) {
   }
   const pdfRef = useRef();
   const downloadPdf = () => {
-   
+    // const pdfRef = useRef();
 
 
-    const capture=document.querySelector('.downloaderpassport');
+    const capture=document.querySelector('.download');
     html2canvas(capture).then((canvas)=>{
      const srcpath = canvas.toDataURL('img/png');
      const doc = new jsPDF('p','mm','a4');
      const componentWidth = doc.internal.pageSize.getWidth();
      const componentHeight = doc.internal.pageSize.getHeight();
-     doc.addImage(srcpath,'png',0,0,componentWidth,componentHeight);
+     doc.addImage(srcpath,'PNG',0,0,componentWidth,componentHeight);
      doc.save('passport.pdf')
-
     })
     console.log("DOWNLOAD");
-    // const input = pdfRef.current;
-    // html2canvas(input).then((canvas) => {
-    //   const imageData = canvas.toDataURL('/images/png');
-    //   const pdf = new jsPDF('p', 'mm', 'a4', false);
-    //   const pdfWidth = pdf.internal.pageSize.getWidth();
-    //   const pdfHeight = pdf.internal.pageSize.getHeight();
-    //   const imgWidth = canvas.width;
-    //   const imgHeight = canvas.height;
-    //   const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-    //   const imgX = (pdfWidth - imgWidth * ratio) / 2;
-    //   const imgY = 30;
-    //   pdf.addImage(imageData,'PNG',
-    //     imgX, imgY, imgWidth * ratio, imgHeight * ratio);
-    //   pdf.save('Passport.pdf');
-    // })
-
-
   }
-  // document
-  // .getElementById("downloadPdf")
-  // .addEventListener("click", function download() {
-  //   const element = document.getElementById("invoice");
-  //   html2pdf()
-  //     .from(element)
-  //     .save();
-  // });
-  document.addEventListener('DOMContentLoaded', () => {
-    const downloadPdf = document.getElementById('downloadPdf');
-  
-    console.log(downloadPdf); // HTMLButtonElement object
-  
-    // ✅ Works as expected
-    downloadPdf.addEventListener('click', () => {
-      alert('You clicked the button');
-    });
-  });
-
-  
   function setCookie(cname,cvalue,exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -177,6 +147,7 @@ function App(props) {
   //       setCookie("username", usernameonpassport, 30);
   //     }else{
   //       document.getElementById('usernameonpassport').innerHTML=user;
+       
   //     }
   //   } else {
    
@@ -190,6 +161,25 @@ function App(props) {
   // useEffect(()=>{
   //   checkCookie("John");
   // },[])
+
+  // window.onload=function(){
+  //   document.getElementById('downloading')
+  //   .addEventListener("click",()=>{
+  //     const mobilebiewonly = this.document.getElementById("mobilebiewonly")
+  //     console.log(mobilebiewonly);
+  //     console.log(window);
+  //     html2pdf.from(mobilebiewonly).save();
+  //   })
+  // }
+  // const dow =()=>{
+  //   document.getElementById('downloading')
+  //   .addEventListener("click",()=>{
+  //     const mobilebiewonly = document.getElementById("mobilebiewonly")
+  //     console.log(mobilebiewonly);
+  //     console.log(window);
+  //     html2pdf.from(mobilebiewonly).save();
+  //   })
+  // }
   return (
     <>
 
@@ -199,38 +189,36 @@ function App(props) {
     <Route path='/explore' element={<Explore/>}/>
    </Routes> */}
         {/* <Flatsurface/>  */}
+         {/* <TriviaQuestion/> */}
+        <Explore/>
+         {/* <div className='download'>
+          <div>
+            <h1>austrlia</h1>
 
-
-
-        {/* <div className="d-flex">
-          <div className="p-3 flex-grow-2"><img src="/images/milkybarLogo.png" height="78px" width="160px" alt='logo' /></div>
-          <div className="p-3 homeiconsd"><img src='/images/hometab.png'/></div>
-          <div className="p-3 souv"><img src='/images/souveriantab.png'/></div>
-       </div> */}
-         <TriviaQuestion/>
-        {/* <Explore/> */}
-
+          </div>
+          <button onClick={downloadPdf}>download</button>
+         </div> */}
         {/* passport working */}
-        {/* <div id='mobilebiewonly'>
-          <div className='container milkybar-bg'>
-              <div className="d-flex">
-          <div className="p-3 flex-grow-2"><img src="/images/milkybarLogo.png" height="78px" width="160px" alt='logo' /></div>
+        {/* <div id='mobilebiewonly' >
+          <div className='container milkybar-bg' >
+              <div className="d-flex py-5 ">
+          <div className="p-1 flex-grow-2"><img src="/images/milkybarLogo.png" height="78px" width="160px" alt='logo' /></div>
           <div className="p-3 homeiconsd"><img src='/images/hometab.png'/></div>
           <span className='badged text-center'>9+</span>
           <div className="p-3 souv"><img src='/images/sourveni.png'/></div>
        </div>
           </div>
           <div>
-            <div className='container justify-content-center align-items-center downloaderpassport'id="invoice">
+            <div className='container justify-content-center align-items-center 'id="invoice" >
               <img className='landingfly' src='/images/backgroundpassport.png' />
               <div className='bluepassbook'>
                 <img className='mypass' src='/images/mypassport.png' />
-                <div>
+                <div className=''>
                   <div className='passportsection'>
                     <div className=""><div className=''>
                       <div className=''>
                         <img className='pages' src='/images/pages.png' />
-                        <div className='top d-flex justify-content-end'>
+                        <div className='top d-flex justify-content-end '>
                           <div className='px-1 py-2'>
                           <img className='profilesection' id='' src="/images/fallback.png" width="20px" height="40px" />
                             <img id='profileCameraImage' className='profilesection' src={image} width="20px" height="40px" />
@@ -242,7 +230,7 @@ function App(props) {
                           </div>
                         </div>
                       </div>
-                      <div className='bottompages'>
+                      <div className='bottompages download'>
                         <img className='continentpages' src='/images/bottompage.png' />
                         <div className='bottom font-face-gm text-center px-2 py-1 yellow'><p className='yellow'> Containents Explored</p>
                           <div className='continents'>
@@ -265,7 +253,10 @@ function App(props) {
           </div>
           <div></div>
           <div className="editBtn d-flex justify-content-end">
-          <img onClick={downloadPdf}  className='downloadpassport' src='/images/downloadedbutton.png'/>
+        
+             <div onClick={downloadPdf}> <img className='downloadpassport' src='/images/downloadedbutton.png'/></div>
+
+        
             <img className='editing' onClick={editableOption} src='/images/Editing.png'/>
           </div>        
           {popup ? <div className='w3-container w3-center w3-animate-top'>
