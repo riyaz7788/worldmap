@@ -5,6 +5,84 @@
   height: 100vh;
   width: 100%;
 }
+.landingpages{
+  /* height: 100vh;
+    width: auto; */
+    height: 100vh;
+    width: auto;
+    position: absolute;
+    bottom: 0px;
+}
+.uncoverbox{
+  position: absolute;
+  top: 45%;
+  font-size: 13vw;
+  color: yellow;
+  right: 26%;
+}
+.headings{
+  position: absolute;
+  top: 45%;
+  font-size: 15vw;
+  color: yellow;
+  right: 26%;
+}
+.heading{
+  position: absolute;
+  top: 32%;
+  font-size: 12vw;
+  color: white;
+}
+.explorebutton{
+  /* position: absolute;
+  bottom: 102px;
+  right: 39%; */
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px 40px;
+gap: 10px;
+
+position: absolute;
+width: auto;
+height: 63px;
+/* left: calc(50% - 319px/2); */
+top: 77%;
+  background: #0394C3;
+border: 5px solid #FFFFFF;
+box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+border-radius: 12px;
+
+}
+#start{
+  font-size: 9vw;
+  font-family: 'Hobeaux';
+  font-style: normal;
+  font-weight: 900;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+
+
+
+.card-body{
+  padding: 0px !important;
+  
+}
+.card{
+  border-color: rgb(0, 0, 0,0)!important;
+}
+
+
+
+
+
+
+
+
+
 
 .milkybar-bg {
   background-color: #FAEA18;
@@ -25,6 +103,27 @@
   background-color: #0394C3;
  color: #E1E1E1;
 }
+
+
+
+
+
+.landingPage{
+  height: 100vh;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+
+
+
+
+
+
+
 .popupInstruction{
   background: #FFF200 !important;
   border: 5px solid #FFFFFF !important; 
@@ -92,6 +191,10 @@
   animation-fill-mode: forwards;
   
 }
+.hideMeAfter5Second{
+  animation: hideAnimation 0s ease-in 2s;
+  animation-fill-mode: forwards;
+}
 #hideHeader{
   animation: hideAnimation 0s ease-in 5s;
   animation-fill-mode: forwards;
@@ -144,31 +247,36 @@
   text-align: left;
 }
 .cloudimage{
-  position: absolute;
+  /* position: absolute;
   height: 145px;
   left: 79px;
-  top: 38px;
+  top: 38px; */
+  /* position: absolute;
+  top: 1%; */
+  position: absolute;
+  top: 6%;
+  height: 139px;
 }
 .triviaQuestions{
   color: #FAEA18;
   text-shadow: 2px 2px 0px #021689;
-  font-size: 36px;
+  font-size: 9vw;
   position: relative;
   top: 10%;
   z-index: 2;
   top: 45px;
 }
 .option{
-  height: 74px;
+  height: 66px;
   width: 100%;
   background: #FFFFFF;
   border: 2px solid #021689;
   box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   right: 6%;
-  margin: 13px;
+  margin: 11px;
   position: relative;
-  font-size: 20px;
+  font-size: 5vw;
 }
 .onHoverAnswer{
   position: relative;
@@ -178,26 +286,15 @@
 .questions{
   position: absolute;
   top: 29%;
-  right: -2%;
-  font-size: 20px;
+  /* right: -2%; */
+  font-size: 6vw;
 }
 .checkAnswer{
   position: absolute;
-  left: 37%;
-  /* top: 92%; */
+  bottom: 5vw;
   text-decoration: underline;
-  bottom: 2%;
 }
-.answerable{
-  height: 27px;
-  background: #FFFFFF;
-  position: relative;
-  width: 100%;
-  right: 7%;
-  /* border-radius: 12px; */
-  right: 5%;
-  margin: 13px;
-}
+
 
 
 
@@ -662,10 +759,10 @@ h2 {
   position: absolute;
   background-color: #0394C3;
   height: 62px;
-  left: 50px;
-  top: 580px;
   font-size: 28px;
   width: 265px;
+  left: 24px;
+  top: 82%;
   box-shadow: 6px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -746,7 +843,8 @@ h2 {
 }
 .header-text {
   position: absolute;
-  top: 300px;
+  /* top: 300px; */
+  top: 307px;
   font-size: 60px;
   color: yellow;
   text-shadow: 2px 2px 0px #021689;
@@ -765,7 +863,8 @@ h2 {
   font-size: 64px;
   top: 230px;
   width: 307px;
-  left: 6px;
+  left: 10px;
+  color: white;
 }
 .icons-btn {
   background-color: #e7f615;
@@ -841,6 +940,7 @@ h2 {
     position: absolute;
     top: 414px;
     width: 322px;
+    
   }
   .header-text {
     position: absolute;
@@ -919,7 +1019,7 @@ h2 {
   }
   .world {
     position: absolute;
-    top: 301px;
+    top: 283px;
   }
   .header-text {
     position: absolute;
@@ -943,10 +1043,10 @@ h2 {
     position: absolute;
     top: 293px;
   }
-  .world {
+  /* .world {
     position: absolute;
     top: 228px;
-  }
+  } */
   .name {
     position: relative;
     left: -63px;
@@ -1139,44 +1239,7 @@ h2 {
     top: 21%;
   }
 }
-/* trivia question resp */
-@media (min-width:414px) {
-  .onHoverAnswer{
-    position: relative;
-    top: 25%;
-    z-index: 2;
-  }
-}
 
-@media (min-width:360px) {
-  .onHoverAnswer{
-    position: relative;
-    top: 25%;
-    z-index: 2;
-  }
-}
-
-@media (min-width:375px) {
-  .onHoverAnswer{
-    position: relative;
-    top: 19%;
-    z-index: 2;
-  }
-}
-@media (min-width:412px) {
-  .onHoverAnswer{
-    position: relative;
-    top: 26%;
-    z-index: 2;
-  }
-}
-@media (min-width:390px) {
-  .onHoverAnswer{
-    position: relative;
-    top: 25%;
-    z-index: 2;
-  }
-}
 /* passport */
 @media (min-width:414px) {
   .badged{
@@ -1186,5 +1249,40 @@ h2 {
 @media (min-width:390px) {
   .badged{
     top: 4%;
+  }
+}
+@media (min-width:320px) {
+  .explorebutton{
+    position: absolute;
+    top: 83%;
+  }
+}
+@media (min-width:360px) {
+  .onHoverAnswer{
+    position: relative;
+    top: 23%;
+    z-index: 2;
+  }
+}
+@media (min-width:320px) {
+  .onHoverAnswer{
+    position: relative;
+    top: 21%;
+    z-index: 2;
+
+  }
+}
+@media (min-width:412px) {
+  .onHoverAnswer{
+    position: relative;
+    top: 25%;
+    z-index: 2;
+  }
+}
+@media (min-width:390px) {
+  .onHoverAnswer{
+    position: relative;
+    top: 25%;
+    z-index: 2;
   }
 }

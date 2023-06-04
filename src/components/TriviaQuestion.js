@@ -14,38 +14,52 @@ function TriviaQuestion() {
     setOptional(true);
   }
   return (
-    <div className='triviaBg  container hideForDesktop'>
+    
+    <div className='triviaBg  container-fluid hideForDesktop' >
+    
       <div className='clouds'>
         <h2 className='triviaQuestions text-center font-face-gm'>Trivia <br /> Question</h2>
-        <img className='cloudimage' src='/images/cloud.png' height="60px" />
+       <div className=' d-flex justify-content-center'>
+       <img className='cloudimage' src='/images/cloud.png'  />
+       </div>
       </div>
-      <div className='questions container px-5 py-2'>
-        <p className='text-white font-face-gm'>Q1: What is the name of the mountain in Asia that has the highest elevation above sea level?  </p>
+      {/* <div className='d-flex justify-content-end'>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"/>
+
+      </div> */}
+      <div className='questions d-flex justify-content-center container px-5 py-4'>
+        <p className='text-white font-face-gm'> What is the name of the mountain in Asia that has the highest elevation above sea level?  </p>
       </div>
-      <div className='onHoverAnswer align-items-center container py-3'>
-        <button type="button" onClick={hideOptions} class="option font-face-gm " data-toggle="collapse" data-target="#demo">Kilimanjaro
-          {options && <div id="demo" class="collapse in font-face-gm answerable ">
-            Oops Wrong Answer!
+      <div className='onHoverAnswer align-items-center container py-5'>
+        <button type="button" onClick={hideOptions} className="option font-face-gm " data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Kilimanjaro
+          {options && <div className="collapse" id="collapseExample">
+            <div class="card card-body">
+              Perfect,Correct Answer!
+            </div>
           </div>}
         </button>
 
-        <button type="button" onClick={hideOption} class="option font-face-gm " data-toggle="collapse" data-target="#demo1">Everest
-          {option && <div id="demo1" class="collapse in font-face-gm answerable">
-            Perfect,Correct Answer!
+        <button type="button" onClick={hideOption} className="option font-face-gm " data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">Everest
+          {option && <div className="collapse" id="collapseExample1">
+            <div class="card card-body">
+              oops,Wrong Answer!
+            </div>
           </div>}
 
         </button>
 
-        <button type="button" onClick={hideOptional} class="option font-face-gm " data-toggle="collapse" data-target="#demo2">Fuji
-          {optional && <div id="demo2" class="collapse in font-face-gm answerable">
-            Oops Wrong Answer!
+        <button type="button" onClick={hideOptional} className="option font-face-gm " data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">Fuji
+          {optional && <div className="collapse" id="collapseExample2">
+            <div class="card card-body">
+              oops,Wrong Answer!
+            </div>
           </div>}
         </button>
-
+         
       </div>
 
-      <div className='py-3'>
-        <p className='checkAnswer text-white font-face-gm text-center'>Check Answer</p>
+      <div className=' d-flex justify-content-center'>
+        <p className='checkAnswer text-white font-face-gm '>Check Answer</p>
       </div>
       <div className='treeImage justify-content-start'>
         <img src='/images/tree.png' />

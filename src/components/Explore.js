@@ -9,6 +9,7 @@ function Explore() {
     const [treasure, setTreasure] = useState(false);
     const [globe, setGlobe] = useState(false);
     const [chest, setChest] = useState(true);
+    const [uncover, setUncover] = useState(false)
     const [instruction, setInstruction] = useState(false);
     // const arscene = document.getElementById('arscene')
     // arscene.style.display="block"  
@@ -33,7 +34,10 @@ function Explore() {
         setTimeout(() => {
             //unstrasure box
             setGlobe(true)
-        }, 300);
+        }, 3000);
+        setTimeout(() => {
+            setUncover(true);
+        }, 400);
         setTimeout(() => {
             //rotating treasure
             setTreasure(true)
@@ -52,9 +56,54 @@ function Explore() {
     return (
         <div>
 
+            <div className='container-fluid milkybar-bg '>
+                <div className="d-flex">
+                    <div className=" p-2"><img className='logoMilky' src="/images/milkybarLogo.png" alt='logo' /></div>
+                    <div className="p-2" data-toggle="modal" data-target="#exampleModalCenter" >
+                        <img className='infoExplore' id='info' src='/images/infoLogo.png' alt='info' />
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <img className="landingpages" src='/images/earthrotation.gif' />
+                </div>
 
-            <div>
-                {display && <div id='screen-2' className="row d-flex justify-content-center align-items-center">
+                <FadeIn>
+                    <div>   {treasure && <img id='hideMeAfter5Seconds' className="chestanim" src='/images/chestanimation.gif' />}
+                    </div>
+                    <div className=''>
+
+                        <div id='hideMeAfter5Seconds'>
+                            {uncover && <><h2 className='font-face-gm  uncoverbox cssanimation sequence fadeInBottom'>Uncover the <br />treasure <br />  box! </h2>
+                            </>}
+                        </div>
+                        {
+                            showText && <><h2 className='font-face-gm headings cssanimation sequence fadeInBottom'>Ready to <br /> discover <br />  the world! </h2>
+                            </>}
+                        <div className='d-flex justify-content-center'>
+                            {exploreButton && <button id='start' className="btn  justify-content-center cssanimations explorebutton sequences fadeInBottoms font-face-gm text-white " onClick={() => Arscene()} >Start Exploring</button>}
+                        </div>
+                    </div>
+                </FadeIn>
+
+                {/* <div className='container-fluid' >
+                                            <h2 className='font-face-gm  uncover  cssanimation sequence fadeInBottom'>Uncover the<br /> treasure  <br />
+                                            </h2> <h1 className='cssanimation text-white sequence fadeInBottom box-chest uncover font-face-gm'>box!</h1>
+                                        </div> */}
+                {/* <div className='screening' >
+                                            <h2 className='font-face-gm  uncover cssanimation sequence fadeInBottom'>Uncover the<br /> treasure  <br />
+                                            </h2> <h1 className='text-white font-face-gm cssanimation aligned sequence fadeInBottom world'>box!</h1>
+                </div> */}
+                {/* {
+                                            showText && <><h2 className='font-face-gm header-text cssanimation sequence fadeInBottom'>Ready to <br /> discover <br /> </h2>
+                                                <h1 className='cssanimation sequence fadeInBottom world font-face-gm'>the world!</h1>
+                                                {exploreButton && <button id='enable-btn' className="btn cssanimations sequences fadeInBottoms btn-info md font-face-gm text-white btn-animated" onClick={() => Arscene()} >Start Exploring</button>}
+                                            </>} */}
+            </div>
+
+
+
+            {/* <div>
+                {display && <div id='screen-2' className="container p-0 m-0 row d-flex justify-content-center align-items-center">
                     <div className="col-12 col-md-8 col-lg-6 col-xl-5 hideForDesktop">
                         <div className="card  text-white">
                             <div className="card-body milkybar-bg  p-3 text-center">
@@ -88,14 +137,14 @@ function Explore() {
                         </div>
                     </div>
                 </div>}
-            </div>
+            </div> */}
 
 
             {/* <!-- Modal --> */}
             <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content popupInstruction justify-content-center">
-                        
+
                         <div className="modal-header justify-content-center">
                             {/* <h5 className="modal-title" id="exampleModalLongTitle">Modal title</h5> */}
                             {/* <button type="button" className="close" data-dismiss="modal" aria-label="Close">
