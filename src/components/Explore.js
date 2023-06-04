@@ -54,7 +54,7 @@ function Explore() {
     }, [])
 
     return (
-        <div>
+        <div id='mobilebiewonly'>
             <div className='container-fluid milkybar-bg '>
                 <div className="d-flex">
                     <div className=" p-2"><img className='logoMilky' src="/images/milkybarLogo.png" alt='logo' /></div>
@@ -72,7 +72,7 @@ function Explore() {
                     <div className=''>
 
                         <div id='hideMeAfter5Seconds'>
-                            {uncover && <><span className='font-face-gm  uncoverbox cssanimation sequence fadeInBottom'>Uncover the <br />treasure <br /><span className='text-white'>box!</span> </span>
+                            {uncover && <><span className='font-face-gm  uncoverbox cssanimation sequence fadeInBottom'>Uncover the <br />treasure <br /><span className=' text-white'>box!</span> </span>
                             </>}
                         </div>
                         {
@@ -86,43 +86,6 @@ function Explore() {
             </div>
 
 
-
-            {/* <div>
-                {display && <div id='screen-2' className="container p-0 m-0 row d-flex justify-content-center align-items-center">
-                    <div className="col-12 col-md-8 col-lg-6 col-xl-5 hideForDesktop">
-                        <div className="card  text-white">
-                            <div className="card-body milkybar-bg  p-3 text-center">
-                                <div className="mb-md-5 mt-md-4 pb-4">
-                                    <div className="d-flex">
-                                        <div className=" p-2"><img className='logoMilky' src="/images/milkybarLogo.png" alt='logo' /></div>
-                                        <div className="p-2" data-toggle="modal" data-target="#exampleModalCenter" >
-                                            <img className='infoExplore' id='info' src='/images/infoLogo.png' alt='info' />
-                                        </div>
-                                    </div>
-                                    <div className='land-page'>
-                                        <img className="landing-page" src='/images/earthrotation.gif' />
-                                        <FadeIn>
-                                            <div>   {treasure && <img id='hideMeAfter5Seconds' className="chestanim" src='/images/chestanimation.gif' />}
-                                            </div>
-                                            <div>
-                                            </div>
-                                        </FadeIn>
-                                        <div id='hideMeAfter5Seconds'>
-                                            <h2 className='font-face-gm header-text aligned cssanimation sequence fadeInBottom'>Uncover the<br /> treasure  <br />
-                                            </h2> <h1 className='cssanimation aligned sequence fadeInBottom world font-face-gm'>box!</h1>
-                                        </div>
-                                        {
-                                            showText && <><h2 className='font-face-gm header-text cssanimation sequence fadeInBottom'>Ready to <br /> discover <br /> </h2>
-                                                <h1 className='cssanimation sequence fadeInBottom world font-face-gm'>the world!</h1>
-                                                {exploreButton && <button id='enable-btn' className="btn cssanimations sequences fadeInBottoms btn-info md font-face-gm text-white btn-animated" onClick={() => Arscene()} >Start Exploring</button>}
-                                            </>}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>}
-            </div> */}
 
 
             {/* <!-- Modal --> */}

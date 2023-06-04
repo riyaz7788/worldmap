@@ -20,20 +20,23 @@
   color: yellow;
   right: 26%; 
   line-height: 66px;
+  text-shadow: 2px 2px 0px #021689;
 }
 .headings{
   position: absolute;
   top: 45%;
-  font-size: 15vw;
+  font-size: 14vw;
   color: yellow;
   right: 26%;
   line-height: 66px;
+  text-shadow: 2px 2px 0px #021689;
 }
 .heading{
   position: absolute;
   top: 32%;
   font-size: 12vw;
   color: white;
+  
 }
 .explorebutton{
   /* position: absolute;
@@ -286,8 +289,11 @@ border-radius: 12px;
   font-size: 5vw;
 }
 .onHoverAnswer{
-  position: relative;
-  top: 19%;
+  /* position: relative;
+  top: 19%; */
+  position: absolute;
+  top: 84vw;
+  margin: -7px;
   z-index: 2;
 }
 .questions{
