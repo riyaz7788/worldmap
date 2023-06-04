@@ -55,7 +55,6 @@ function Explore() {
 
     return (
         <div>
-
             <div className='container-fluid milkybar-bg '>
                 <div className="d-flex">
                     <div className=" p-2"><img className='logoMilky' src="/images/milkybarLogo.png" alt='logo' /></div>
@@ -73,31 +72,17 @@ function Explore() {
                     <div className=''>
 
                         <div id='hideMeAfter5Seconds'>
-                            {uncover && <><h2 className='font-face-gm  uncoverbox cssanimation sequence fadeInBottom'>Uncover the <br />treasure <br />  box! </h2>
+                            {uncover && <><span className='font-face-gm  uncoverbox cssanimation sequence fadeInBottom'>Uncover the <br />treasure <br /><span className='text-white'>box!</span> </span>
                             </>}
                         </div>
                         {
-                            showText && <><h2 className='font-face-gm headings cssanimation sequence fadeInBottom'>Ready to <br /> discover <br />  the world! </h2>
+                            showText && <><span className='font-face-gm headings cssanimation sequence fadeInBottom'>Ready to <br /> discover <br />  <span className='text-white'>the world!</span> </span>
                             </>}
                         <div className='d-flex justify-content-center'>
                             {exploreButton && <button id='start' className="btn  justify-content-center cssanimations explorebutton sequences fadeInBottoms font-face-gm text-white " onClick={() => Arscene()} >Start Exploring</button>}
                         </div>
                     </div>
                 </FadeIn>
-
-                {/* <div className='container-fluid' >
-                                            <h2 className='font-face-gm  uncover  cssanimation sequence fadeInBottom'>Uncover the<br /> treasure  <br />
-                                            </h2> <h1 className='cssanimation text-white sequence fadeInBottom box-chest uncover font-face-gm'>box!</h1>
-                                        </div> */}
-                {/* <div className='screening' >
-                                            <h2 className='font-face-gm  uncover cssanimation sequence fadeInBottom'>Uncover the<br /> treasure  <br />
-                                            </h2> <h1 className='text-white font-face-gm cssanimation aligned sequence fadeInBottom world'>box!</h1>
-                </div> */}
-                {/* {
-                                            showText && <><h2 className='font-face-gm header-text cssanimation sequence fadeInBottom'>Ready to <br /> discover <br /> </h2>
-                                                <h1 className='cssanimation sequence fadeInBottom world font-face-gm'>the world!</h1>
-                                                {exploreButton && <button id='enable-btn' className="btn cssanimations sequences fadeInBottoms btn-info md font-face-gm text-white btn-animated" onClick={() => Arscene()} >Start Exploring</button>}
-                                            </>} */}
             </div>
 
 

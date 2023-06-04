@@ -18,7 +18,8 @@
   top: 45%;
   font-size: 13vw;
   color: yellow;
-  right: 26%;
+  right: 26%; 
+  line-height: 66px;
 }
 .headings{
   position: absolute;
@@ -26,6 +27,7 @@
   font-size: 15vw;
   color: yellow;
   right: 26%;
+  line-height: 66px;
 }
 .heading{
   position: absolute;
@@ -62,6 +64,11 @@ border-radius: 12px;
   font-weight: 900;
   text-align: center;
   color: #FFFFFF;
+  height: 78px;
+  background: #0394C3;
+border: 5px solid #FFFFFF;
+box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+border-radius: 12px;
 }
 
 
